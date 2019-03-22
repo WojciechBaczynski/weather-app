@@ -4,10 +4,22 @@ import Result from './Result/Result';
 import './App.css';
 
 class App extends Component {
+  state = {
+    value: ""
+  }
+
+  inputChangeHandler = (e) => {
+    this.setState({
+      value: e.target.value
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Form />
+        <Form
+          value={this.state.value}
+          inputChange={this.inputChangeHandler} />
         <Result />
       </div>
     );
