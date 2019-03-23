@@ -1,7 +1,7 @@
 import React from 'react';
 
 const form = props => (
-    <form>
+    <form onSubmit={props.submitCity}>
         <input
             type="text"
             value={props.value}
