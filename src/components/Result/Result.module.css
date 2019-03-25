@@ -1,0 +1,14 @@
+.Result {
+    margin: 0 50px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.Result h3,
+.Result h4 {
+    font-weight: normal;
+}
+
+.Result em {
+    font-weight: bold;
+}
