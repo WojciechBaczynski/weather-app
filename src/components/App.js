@@ -15,7 +15,7 @@ class App extends Component {
     temp: "",
     pressure: "",
     wind: "",
-    err: ""
+    err: false
   }
 
   inputChangeHandler = (e) => {

@@ -1,13 +1,27 @@
 import React from 'react';
 
 const result = props => {
-    const { err, city, temp } = props.weather;
+    const { err, date, city, sunrise, sunset, temp, pressure, wind } = props.weather;
+    let content = null;
+    if (!err && city) {
+        const sunriseTime = new Date(sunrise * 1000).toLocaleTimeString();
+        const sunsetTime = new Date(sunset * 1000).toLocaleTimeString();
+        content = (
+            <div>
+                <h3>Wyniki wyszukiwania dla <em>{city}</em></h3>
+                <h4>Dane dla dnia i godziny: {date}</h4>
+                <h4>Aktualna temperatura {temp}&#176;C</h4>
+                <h4>Wschód słońca dzisiaj {sunriseTime}</h4>
+                <h4>Zachód słońca dzisiaj {sunsetTime}</h4>
+                <h4>Aktualna siła wiatu {wind}m/s</h4>
+                <h4>Aktualne ciśnienie {pressure}hPa</h4>
+            </div>
+        );
+    }
     return (
-        <React.Fragment>
-            <p>{String(err)}</p>
-            <p>Miasto: {city}</p>
-            <p>Temperatura: {temp}</p>
-        </React.Fragment>
+        <div className="result">
+            {err ? `Nie mamy w bazie ${city}` : content}
+        </div>
     );
 };
 
