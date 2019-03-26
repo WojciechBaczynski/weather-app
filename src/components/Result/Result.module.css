@@ -1,12 +1,15 @@
 .Result {
     margin: 0 50px;
     padding-top: 20px;
-    border-top: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
 }
 
 .Result h3,
 .Result h4 {
     font-weight: normal;
+    display: flex;
+    justify-content: center;
 }
 
 .Result em {

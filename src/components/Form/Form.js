@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Form.module.css';
 
 const form = props => (
-    <form onSubmit={props.submitCity}>
+    <form className={styles.Form} onSubmit={props.submitCity}>
         <input
             type="text"
             value={props.value}

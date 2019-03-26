@@ -19,9 +19,10 @@ const result = props => {
             </React.Fragment>
         );
     }
+    const badData = <h4>Nie mamy w bazie {city}</h4>
     return (
         <div className={styles.Result}>
-            {err ? `Nie mamy w bazie ${city}` : content}
+            {err ? badData : content}
         </div>
     );
 };
